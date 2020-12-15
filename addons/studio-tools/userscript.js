@@ -16,8 +16,6 @@ export default async function ({ addon, global, console, msg }) {
     promoteSpan.textContent = msg("promote");
     promoteButton.appendChild(promoteSpan);
     promoteButton.addEventListener("click", () => {
-      const value = document.getElementById("curator_ids").value.trim();
-      if (value) {
         document.getElementById("curator_ids").value = "";
 
         const fakeDiv = document.createElement("div");
@@ -26,7 +24,6 @@ export default async function ({ addon, global, console, msg }) {
         const dummyChild = document.createElement("a");
         fakeDiv.appendChild(dummyChild);
         backbone.promoteCurator({ target: dummyChild });
-      }
     });
     document.querySelector(".control-group.append-to-input").appendChild(promoteButton);
 
