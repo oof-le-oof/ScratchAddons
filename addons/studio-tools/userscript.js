@@ -6,9 +6,7 @@ export default async function ({ addon, global, console, msg }) {
   addedByExtension.style.fontSize = ".7rem";
   addedByExtension.style.fontStyle = "italic";
   addedByExtension.style.marginLeft = "2px";
-  if (document.getElementById("curator-action-bar")) {
     document.querySelector("#show-add-curator > span").textContent = msg("ipr");
-
     const promoteButton = document.createElement("div");
     promoteButton.className = "button grey small";
     promoteButton.style.marginLeft = "1px";
@@ -24,7 +22,7 @@ export default async function ({ addon, global, console, msg }) {
         const dummyChild = document.createElement("a");
         fakeDiv.appendChild(dummyChild);
         backbone.promoteCurator({ target: dummyChild });
-    });
+    };
     document.querySelector(".control-group.append-to-input").appendChild(promoteButton);
 
     const removeButton = document.createElement("div");
